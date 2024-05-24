@@ -1,7 +1,72 @@
-# Tauri + Vue 3
+# Инструкция по запуску проекта
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Чтобы запустить проект, выполните следующие шаги:
 
-## Recommended IDE Setup
+## Установка необходимых инструментов
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+### Установка Rust
+
+Для сборки проекта требуется Rust. Скачайте и установите Rust с помощью [официального установщика Rust](https://www.rust-lang.org/tools/install):
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+После установки, убедитесь, что Rust установлен корректно, проверив версию:
+
+```
+rustc --version
+```
+
+### Установка Node.js и npm
+
+Для работы с npm и установки зависимостей необходимо установить Node.js. Скачайте и установите Node.js с [официального сайта](https://nodejs.org/).
+
+Проверьте, что Node.js и npm установлены корректно:
+
+```
+node --version
+npm --version
+```
+
+### Установка Tauri CLI
+
+Для работы с проектами на Tauri необходимо установить Tauri CLI. Сделать это можно с помощью команды:
+
+```
+cargo install tauri-cli
+```
+
+## Скачивание проекта
+
+Склонируйте репозиторий проекта с помощью команды:
+
+```
+git clone https://github.com/Al3cHWK/infinity-analyzer
+```
+
+## Переход в папку проекта
+
+Перейдите в скачанную папку:
+
+```
+cd infinity-analyzer
+```
+
+## Установка зависимостей
+
+Установите необходимые зависимости, выполнив команду:
+
+```
+npm install
+```
+
+## Сборка проекта
+
+Соберите проект командой:
+
+```
+npm run tauri build --release
+```
+
+После выполнения этих шагов проект будет готов к использованию.
