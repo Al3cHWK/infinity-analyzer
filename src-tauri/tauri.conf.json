@@ -1,25 +1,38 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
     "distDir": "../dist"
   },
   "package": {
-    "productName": "huizalupapizda",
+    "productName": "infinity-logger",
     "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
-      "all": true,
+      "all": false,
+      "dialog": {
+        "all": true
+      },
+      "fs": {
+        "all": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": true,
+        "createDir": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true
+      },
       "shell": {
-        "all": false,
         "open": true
       }
     },
     "windows": [
       {
-        "title": "tauri-app",
+        "title": "infinity-logger",
         "width": 800,
         "height": 600,
         "minHeight": 1280,
@@ -31,11 +44,17 @@
     },
     "bundle": {
       "active": true,
-      "targets": "all",
-      "identifier": "huizalupapizda",
-      "icon": [
-        "2c308120-f451-4905-9797-647fc60f5a06.png"
-      ]
+      "targets": ["deb"],
+      "identifier": "infinity-logger",
+      "icon": ["src-tauri/2c308120-f451-4905-9797-647fc60f5a06.png"],
+      "deb": {
+        "depends": [
+          "libc6 (>= 2.34)",
+          "libssl3",
+          "libgtk-3-0",
+          "libwebkit2gtk-4.0-37"
+        ]
+      }
     }
   }
 }
